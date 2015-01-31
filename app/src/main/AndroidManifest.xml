@@ -41,6 +41,29 @@
             -->
 
             <intent-filter>
+                <action android:name="course.labs.permissions.DANGEROUS_ACTIVITY" />
+
+                <!--
+                Without this category tag attribute value of
+                "android.intent.category.DEFAULT", Android WILL NOT be
+                able to RESOLVE this implicit Intent
+                -->
+
+                <!--
+                Possible Exception thrown without the category tag:
+                    E/AndroidRuntime(2290): FATAL EXCEPTION: main
+                    E/AndroidRuntime(2290): Process: course.labs.permissionsapp, PID: 2290
+                    E/AndroidRuntime(2290): android.content.ActivityNotFoundException: No Activity found to handle Intent
+                    { act=course.labs.permissions.DANGEROUS_ACTIVITY }
+                    ..........
+                -->
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+            </intent-filter>
+
+
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
