@@ -1,0 +1,19 @@
+No, the DangerousApp isn't able to be launch directly from the home screen / app launcher and show a toast message of "Application not Found ".
+I suspect that it is due to Android System security limitation which prevents users from directly launching the app which enforces with a "dangerous" permission. 
+
+Code Snippet :
+
+<application 
+    
+    android:permission = " course.labs.permissions.DANGEROUS_ACTIVITY_PERM"
+    android:allowBackup="true"            
+    android:icon="@drawable/ic_launcher" 
+    android:label="@string/app_name" android:theme="@style/AppTheme">
+    
+         .............
+         ............. 
+
+</application>
+
+Android will read the entries from the Android Manifest file of the app and determine whether does it enforces any dangerous permission. 
+And then prevents the user from directly launching the app from the homescreen / app launcher if there are any of the entry identified.
